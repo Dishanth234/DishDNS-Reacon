@@ -1,0 +1,11 @@
+*.idea/
+*.orig
+*.pyc
+*.pyo
+venv/
+.venv/
+*.pytest_cache/
+*.egg-info
+build/
+dist/
+*.junie/
