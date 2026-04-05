@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#    Unit tests for DNSRecon's REST API
+#    Unit tests for DishDNS-Reacon's REST API
 #    Author: Jay Townsend
 #
 #    Copyright (C) 2026 Dishanth
@@ -25,8 +25,8 @@ from fastapi.testclient import TestClient
 from dishdns_reacon.api import app
 
 
-class TestDNSReconAPI:
-    """Test class for DNSRecon REST API endpoints"""
+class TestDishDNSReaconAPI:
+    """Test class for DishDNS-Reacon REST API endpoints"""
     
     @pytest.fixture
     def client(self):
@@ -38,7 +38,7 @@ class TestDNSReconAPI:
         response = client.get("/")
         assert response.status_code == 200
         assert response.headers["content-type"] == "text/html; charset=utf-8"
-        assert "DNSRecon REST API" in response.text
+        assert "DishDNS-Reacon REST API" in response.text
         assert "/docs" in response.text
         assert "/capabilities" in response.text
     

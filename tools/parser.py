@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#    DNSRecon Data Parser
+#    DishDNS-Reacon Data Parser
 #
 #    Copyright (C) 2026 Dishanth
 #
@@ -77,7 +77,7 @@ def process_range(arg: str) -> list[IPAddress] | IPNetwork | IPRange:
 
 def xml_parse(xm_file: str, ifilter: list[IPAddress], tfilter: str, nfilter: str, is_list: bool) -> None:
     """
-    Function for parsing XML files created by DNSRecon and apply filters.
+    Function for parsing XML files created by DishDNS-Reacon and apply filters.
     """
     iplist: list[str] = []
     for _event, elem in cElementTree.iterparse(xm_file):
@@ -153,7 +153,7 @@ def xml_parse(xm_file: str, ifilter: list[IPAddress], tfilter: str, nfilter: str
 
 def csv_parse(csv_file: str, ifilter: list[IPAddress], tfilter: str, nfilter: str, is_list: bool) -> None:
     """
-    Function for parsing CSV files created by DNSRecon and apply filters.
+    Function for parsing CSV files created by DishDNS-Reacon and apply filters.
     """
     iplist: list[str] = []
     with open(csv_file) as f:
@@ -248,11 +248,11 @@ def detect_type(file_path: str) -> str:
 
 def usage():
     print(f'Version: {__version__}')
-    print('DNSRecon output file parser')
+    print('DishDNS-Reacon output file parser')
     print('Usage: parser.py <options>\n')
     print('Options:')
     print('   -h, --help               Show this help message and exit')
-    print('   -f, --file    <file>     DNSRecon XML or CSV output file to parse.')
+    print('   -f, --file    <file>     DishDNS-Reacon XML or CSV output file to parse.')
     print('   -l, --list               Output an unique IP List that can be used with other tools.')
     print('   -i, --ips     <ranges>   IP Ranges in a comma separated list each in formats (first-last)')
     print('                            or in (range/bitmask) for ranges to be included from output.')
@@ -340,7 +340,7 @@ def main() -> None:
             elif file_type == 'csv':
                 csv_parse(file, ip_filter, type_filter, name_filter, target_list)
     else:
-        print_error('A DNSRecon XML or CSV output file must be provided to be parsed')
+        print_error('A DishDNS-Reacon XML or CSV output file must be provided to be parsed')
         usage()
 
 

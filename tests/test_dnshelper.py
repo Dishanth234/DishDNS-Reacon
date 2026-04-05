@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#    Unit test for DNSRecon's dnshelper library
+#    Unit test for DishDNS-Reacon's dnshelper library
 #    Author: Filippo Lauria (@filippolauria)
 #
 #    Copyright (C) 2026 Dishanth

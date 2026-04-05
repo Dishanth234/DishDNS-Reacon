@@ -6,7 +6,7 @@
 - Added Shodan support for netblock expansion during DNS enumeration and API enhancements to leverage it (Fixes #104). ([12a5b15](https://github.com/dishanthca/DishDNS-Reacon/commit/12a5b15))
 
 ### Changed
-- Bumped DNSRecon version to `1.6.0`.
+- Bumped DishDNS-Reacon version to `1.6.0`.
 - Updated FastAPI to 0.134.0 and replaced `UJSONResponse` with `JSONResponse` for compatibility. ([8360ec0](https://github.com/dishanthca/DishDNS-Reacon/commit/8360ec0))
 - Bumped `fastapi` from 0.129.2 to 0.133.1. ([8476e35](https://github.com/dishanthca/DishDNS-Reacon/commit/8476e35))
 - Bumped `ruff` from 0.15.2 to 0.15.4. ([0c8bc7e](https://github.com/dishanthca/DishDNS-Reacon/commit/0c8bc7e))

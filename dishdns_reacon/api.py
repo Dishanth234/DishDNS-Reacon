@@ -80,8 +80,8 @@ class ErrorResponse(BaseModel):
 
 limiter = Limiter(key_func=get_remote_address)
 app = FastAPI(
-    title='DNSRecon REST API',
-    description='REST API for DNSRecon powered by FastAPI',
+    title='DishDNS-Reacon REST API',
+    description='Professional REST API for DishDNS-Reacon, the ultimate DNS reconnaissance suite.',
     version='1.0.0',
     docs_url='/docs',
     redoc_url='/redoc',
@@ -102,7 +102,7 @@ app.add_middleware(
 @app.get('/', response_class=HTMLResponse)
 async def root(*, user_agent: str = Header(None)) -> Response:
     """
-    Root endpoint that displays the DNSRecon logo and links to the API documentation.
+    Root endpoint that displays the DishDNS-Reacon logo and links to the API documentation.
 
     Also performs basic user agent filtering to redirect suspicious bots.
     """
@@ -116,36 +116,51 @@ async def root(*, user_agent: str = Header(None)) -> Response:
     <!DOCTYPE html>
     <html lang="en-US">
         <head>
-            <title>DNSRecon API</title>
+            <title>DishDNS-Reacon API</title>
              <style>
+              body {
+                background-color: #0d1117;
+                color: #c9d1d9;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              }
               .header {
                 text-align: center;
                 display: block;
-                font-family: Arial, sans-serif;
                 margin: 50px 0;
+              }
+              .header h1 {
+                background: linear-gradient(90deg, #58a6ff 0%, #bc8cff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 3rem;
               }
               .api-links {
                 text-align: center;
                 margin-top: 20px;
-                font-family: Arial, sans-serif;
               }
               .api-links a {
                 margin: 0 10px;
                 text-decoration: none;
-                color: #0366d6;
+                color: #58a6ff;
+                border: 1px solid #30363d;
+                padding: 10px 20px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
               }
               .api-links a:hover {
-                text-decoration: underline;
+                background-color: #161b22;
+                border-color: #8b949e;
               }
             </style>
         </head>
         <body>
             <div class="header">
-                <h1>DNSRecon REST API</h1>
+                <h1>🌌 DishDNS-Reacon REST API</h1>
+                <p>Advanced DNS Reconnaissance Framework by Dishanth</p>
             </div>
             <div class="api-links">
-                <a href="/docs">API Documentation</a> | 
-                <a href="/redoc">ReDoc Documentation</a> | 
+                <a href="/docs">API Documentation</a>
+                <a href="/redoc">ReDoc Documentation</a>
                 <a href="/capabilities">API Capabilities</a>
             </div>
         </body>
